@@ -5,6 +5,7 @@
     <title>Clinica Pilar</title>
     <link rel="icon" href="../Assets/imagenes/cruz.ico">
     <link rel="stylesheet" type="text/css" href="../Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../Assets/css/estilos.css">
 </head>
 <body>
     <div class="d-flex justify-content-center align-items-center vh-100">
@@ -14,24 +15,7 @@
                 Chat Clinica Pilar
             </div>
             
-            <div class="card-body" id="chat-box" style="height: 400px; overflow-y: auto;">
-                <div class="d-flex flex-column mb-2 align-items-start">
-                    <div class="p-2 bg-light rounded d-inline-block">
-                        <strong>Doctora:</strong>
-                    </div>
-                    <div class="p-2 bg-primary rounded d-inline-block">
-                        text
-                    </div>
-                </div>
-                <div class="d-flex flex-column align-items-end mb-2">
-                    <div class="p-2 bg-light rounded">
-                        <strong>Yo:</strong>
-                    </div>
-                    <div class="p-2 bg-success rounded">
-                        text
-                    </div>
-                </div>
-            </div>
+            <div class="card-body" id="chat-box" style="height: 400px; overflow-y: auto;"></div>
             
             <div class="card-footer">
                 <form id="chat-form" class="d-flex">
@@ -42,6 +26,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="../Assets/js/chat.js"></script>
     <script src="../Assets/js/bootstrap.bundle.min.js" ></script>
 </body>
