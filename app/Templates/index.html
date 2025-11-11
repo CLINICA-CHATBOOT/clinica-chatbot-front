@@ -5,37 +5,29 @@
     <title>Clinica Pilar</title>
     <link rel="icon" href="../Assets/imagenes/cruz.ico">
     <link rel="stylesheet" type="text/css" href="../Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../Assets/css/estilos.css">
 </head>
 <body>
-    <div class="vh-100 d-flex justify-content-center">
-        <div class="col-12 col-md-4">
-            <div class="card" style="width: 100%; height: 100%;">
-                <div class="card-header bg-primary text-white mt-2">
-                    Chat Clinica Pilar
-                </div>
-                
-                <div class="card-body" id="chat-box" style="height: 400px; overflow-y: auto;">
-                    <div class="d-flex mb-2">
-                        <div class="p-2 bg-light rounded">
-                            <strong>Doctora:</strong>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end mb-2">
-                        <div class="p-2 bg-success text-white rounded">
-                            Yo: 
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card-footer">
-                    <form id="chat-form" class="d-flex">
-                        <input type="text" id="chat-input" class="form-control me-2" placeholder="Escribe tu mensaje...">
-                        <button class="btn btn-primary">Enviar</button>
-                    </form>
-                </div>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="card" style="width: 900px; height: 700px;">
+            <div class="card-header bg-primary text-white d-flex align-items-center">
+                <img src="../Assets/imagenes/doctora.png" alt="doctora" style="width: 50px; height: 50px; float: left;">
+                Chat Clinica Pilar
+            </div>
+            
+            <div class="card-body" id="chat-box" style="height: 400px; overflow-y: auto;"></div>
+            
+            <div class="card-footer">
+                <form id="chat-form" class="d-flex">
+                    <input type="text" id="chat-input" class="form-control me-2" placeholder="Escribe tu mensaje...">
+                    <button class="btn btn-primary">Enviar</button>
+                </form>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../Assets/js/chat.js"></script>
     <script src="../Assets/js/bootstrap.bundle.min.js" ></script>
 </body>
 </html>
