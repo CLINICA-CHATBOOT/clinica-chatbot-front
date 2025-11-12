@@ -29,3 +29,33 @@
     opacity: 1;
   }
 }
+
+.doctora_color {
+  background-color: #9fc6bd;
+  color: black;
+}
+
+.btn.doctora_color:hover {
+  background-color: #e2f2ef;
+  color: black;
+  border-color: #e2f2ef;
+}
+
+.btn.doctora_color:focus {
+  outline: none;
+  background-color: #e2f2ef;
+  color: black;
+  box-shadow: 0 0 6px rgba(198, 219, 214, 0.8);
+  border-color: #e2f2ef;
+}
+
+.usuario_color {
+  background-color: #dbdccf;
+  color: black;
+}
+
+.form-control:focus {
+  outline: none; 
+  border-color: #c6dbd6; 
+  box-shadow: 0 0 15px 5px rgba(198, 219, 214, 1);
+}
