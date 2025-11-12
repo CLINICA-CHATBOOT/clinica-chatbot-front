@@ -5,7 +5,7 @@ const input = document.getElementById("chat-input");
 document.addEventListener("DOMContentLoaded", async () => {
   const res = await fetch("/api/");
   const data = await res.json();
-  appendMessage("Doctora", data.message, "bg-primary text-white", "start");
+  appendMessage("Doctora", data.message, "doctora_color", "start");
 });
 
 form.addEventListener("submit", async (e) => {
@@ -14,7 +14,7 @@ form.addEventListener("submit", async (e) => {
   if (!text) return;
 
   // mostrar mi mensaje
-  appendMessage("Yo", text, "bg-success text-white", "end");
+  appendMessage("Yo", text, "usuario_color", "end");
   input.value = "";
 
   // mostrar burbuja temporal
@@ -22,7 +22,7 @@ form.addEventListener("submit", async (e) => {
   typingDiv.className = "d-flex flex-column align-items-start mb-2";
   typingDiv.innerHTML = `
     <div class="p-2 bg-light rounded d-inline-block"><strong>Doctora:</strong></div>
-    <div class="p-2 bg-primary text-white rounded d-inline-block typing"><span></span><span></span><span></span></div>
+    <div class="p-2 doctora_color rounded d-inline-block typing"><span></span><span></span><span></span></div>
   `;
   chatBox.appendChild(typingDiv);
   chatBox.scrollTop = chatBox.scrollHeight;
@@ -40,7 +40,7 @@ form.addEventListener("submit", async (e) => {
     chatBox.removeChild(typingDiv);
 
     // mostrar respuesta real
-    appendMessage("Doctora", data.response, "bg-primary text-white", "start");
+    appendMessage("Doctora", data.response, "doctora_color", "start");
   } catch (err) {
     chatBox.removeChild(typingDiv);
     appendMessage("Sistema", "Error al conectar con el servidor", "bg-danger text-white", "start");
@@ -50,14 +50,14 @@ form.addEventListener("submit", async (e) => {
 async function loadSpecialties() {
   const res = await fetch("/api/directory/specialties");
   const data = await res.json();
-  appendMessage("Doctora", "Especialidades: " + data.specialties.join(""), "bg-primary text-white", "start");
+  appendMessage("Doctora", "Especialidades: " + data.specialties.join(""), "doctora_color", "start");
 }
 
 async function loadProfessionals(specialty) {
   const res = await fetch(`/api/directory/professionals/${specialty}`);
   const data = await res.json();
   const lista = data.professionals.map(p => `- ${p}`).join("\n");
-  appendMessage("Doctora", `Profesionales en ${data.specialty}:\n${lista}`, "bg-primary text-white", "start");
+  appendMessage("Doctora", `Profesionales en ${data.specialty}:\n${lista}`, "doctora_color", "start");
 }
 
 function appendMessage(sender, message, classes, align = "start") {
